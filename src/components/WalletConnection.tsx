@@ -29,7 +29,6 @@ export const WalletConnection: React.FC<WalletConnectionProps> = ({
           <div className="relative z-10 flex items-center gap-3">
             <div className="relative">
               <Wallet size={22} className="group-hover:rotate-12 transition-transform duration-300" />
-              <div className="absolute -top-1 -right-1 w-2 h-2 bg-yellow-400 rounded-full animate-ping group-hover:animate-pulse"></div>
             </div>
             <span className="text-lg">Connect Wallet</span>
             <Shield size={18} className="text-emerald-300 group-hover:text-yellow-300 transition-colors duration-300" />
