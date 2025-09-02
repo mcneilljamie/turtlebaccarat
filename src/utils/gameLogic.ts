@@ -14,17 +14,10 @@ export const createDeck = (): Card[] => {
     });
   });
 
-  return shuffleDeck(deck);
+  // TODO: Use cryptographically secure randomness from blockchain
+  return deck;
 };
 
-export const shuffleDeck = (deck: Card[]): Card[] => {
-  const shuffled = [...deck];
-  for (let i = shuffled.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
-  }
-  return shuffled;
-};
 
 export const calculateHandValue = (cards: Card[]): number => {
   const total = cards.reduce((sum, card) => sum + card.numericValue, 0);

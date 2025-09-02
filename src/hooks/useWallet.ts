@@ -9,20 +9,10 @@ export const useWallet = () => {
   });
 
   const connectWallet = useCallback(async () => {
-    // Mock wallet connection - in real implementation, this would integrate with actual wallet
     try {
-      // Simulate connection delay
-      await new Promise(resolve => setTimeout(resolve, 1000));
-      
-      // Mock wallet data
-      const mockAddress = '0x' + Math.random().toString(16).substr(2, 40);
-      const mockBalance = Math.floor(Math.random() * 100) + 50; // 50-150 TURTLE
-      
-      setWallet({
-        connected: true,
-        balance: mockBalance,
-        address: mockAddress
-      });
+      // TODO: Integrate with actual Solana wallet (Phantom, Solflare, etc.)
+      // This should connect to the user's wallet and fetch their TURTLE token balance
+      console.log('Wallet connection not yet implemented');
     } catch (error) {
       console.error('Failed to connect wallet:', error);
     }
