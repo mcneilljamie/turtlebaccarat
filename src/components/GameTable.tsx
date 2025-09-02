@@ -95,16 +95,16 @@ export const GameTable: React.FC<GameTableProps> = ({
 
         {/* Winner Announcement */}
         {winner && gamePhase === 'finished' && (
-          <div className="absolute top-0 left-0 right-0 flex items-center justify-center bg-black/60 rounded-t-3xl backdrop-blur-sm z-20 py-8">
-            <div className="bg-gradient-to-r from-emerald-600 to-emerald-700 text-white p-4 rounded-2xl text-center shadow-2xl border-2 border-yellow-400">
+          <div className="absolute inset-x-0 top-1/2 -translate-y-1/2 flex items-center justify-center z-20">
+            <div className="bg-gradient-to-r from-emerald-600 to-emerald-700 text-white p-6 rounded-2xl text-center shadow-2xl border-2 border-yellow-400 backdrop-blur-sm bg-black/20">
               <div className="text-2xl font-bold mb-2">
                 {winner === 'tie' ? '🤝 Tie!' : 
                  winner === 'player' ? '🎉 Player Wins!' : '🏦 Banker Wins!'}
               </div>
-              <div className="text-emerald-200 text-sm">
-                {winner === 'player' ? `Player: ${playerTotal}` :
-                 winner === 'banker' ? `Banker: ${bankerTotal}` :
-                 `Both: ${playerTotal}`}
+              <div className="text-emerald-200 text-sm font-medium">
+                {winner === 'tie' ? 
+                  `Final Score: ${playerTotal} - ${bankerTotal}` :
+                  `Winning Hand: ${winner === 'player' ? playerTotal : bankerTotal}`}
               </div>
             </div>
           </div>
